@@ -15,7 +15,7 @@ export default function RootLayout({
   const jsonLd = buildLocalBusinessJsonLd(siteData);
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="sr" suppressHydrationWarning>
       <body>
         <script
           type="application/ld+json"

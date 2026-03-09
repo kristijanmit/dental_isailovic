@@ -165,5 +165,5 @@ export type SiteData = {
 
 import { getSiteData } from "./translations";
 
-/** Default English site data. Use getSiteData(locale) for i18n. */
-export const siteData: SiteData = getSiteData("en");
+/** Default Serbian site data. Use getSiteData(locale) for i18n. */
+export const siteData: SiteData = getSiteData("sr");

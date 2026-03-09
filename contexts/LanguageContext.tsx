@@ -23,14 +23,14 @@ type LanguageContextValue = {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 function getInitialLocale(): Locale {
-  if (typeof window === "undefined") return "en";
+  if (typeof window === "undefined") return "sr";
   const stored = localStorage.getItem(STORAGE_KEY);
   if (stored === "sr" || stored === "en") return stored;
-  return "en";
+  return "sr";
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("en");
+  const [locale, setLocaleState] = useState<Locale>("sr");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
