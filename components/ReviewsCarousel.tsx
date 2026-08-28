@@ -102,6 +102,7 @@ export function ReviewsCarousel() {
                 }}
               >
                 <div
+                  role="img"
                   className="mb-3 flex items-center gap-0.5"
                   aria-label={`${reviews[index].rating} ${siteData.common.starsOutOfFiveSuffix}`}
                 >

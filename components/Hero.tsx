@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { Calendar, Phone, ShieldCheck } from "lucide-react";
 import { useSiteData } from "@/contexts/LanguageContext";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -8,9 +9,34 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 const VIDEO_SRC = "/videos/hero.mp4";
 const POSTER_SRC = "/images/smile.jpg";
 
+type NetworkInformation = {
+  saveData?: boolean;
+  effectiveType?: string;
+};
+
+function shouldLoadHeroVideo(): boolean {
+  if (typeof window === "undefined") return false;
+  if (window.matchMedia("(max-width: 767px)").matches) return false;
+
+  const connection = (
+    navigator as Navigator & { connection?: NetworkInformation }
+  ).connection;
+  if (connection?.saveData) return false;
+  if (connection?.effectiveType && /2g/.test(connection.effectiveType)) {
+    return false;
+  }
+
+  return true;
+}
+
 export function Hero() {
   const siteData = useSiteData();
   const reduceMotion = useReducedMotion();
+  const [canLoadVideo, setCanLoadVideo] = useState(false);
+
+  useEffect(() => {
+    setCanLoadVideo(shouldLoadHeroVideo());
+  }, []);
 
   return (
     <section
@@ -29,7 +55,7 @@ export function Hero() {
           sizes="100vw"
         />
       </div>
-      {!reduceMotion && (
+      {!reduceMotion && canLoadVideo && (
         <video
           autoPlay
           muted

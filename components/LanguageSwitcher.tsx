@@ -22,10 +22,10 @@ export function LanguageSwitcher({ className }: { className?: string }) {
             "rounded px-2 py-1 text-xs font-medium transition-colors sm:text-sm",
             locale === loc
               ? "bg-accent text-accent-foreground"
-              : "text-muted-foreground hover:text-foreground"
+              : "text-accent-foreground hover:bg-accent-foreground/10"
           )}
           aria-pressed={locale === loc}
-          aria-label={`Switch to ${localeLabels[loc]}`}
+          aria-label={`${loc.toUpperCase()} — Switch to ${localeLabels[loc]}`}
         >
           {loc.toUpperCase()}
         </button>

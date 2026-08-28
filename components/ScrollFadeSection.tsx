@@ -36,7 +36,7 @@ export function ScrollFadeSection({ children }: { children: ReactNode }) {
   return (
     <div ref={ref}>
       <div
-        style={reduceMotion ? undefined : { opacity: Math.max(0.2, opacity) }}
+        style={reduceMotion ? undefined : { opacity: Math.max(0.85, opacity) }}
       >
         {children}
       </div>

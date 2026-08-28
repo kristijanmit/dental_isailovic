@@ -51,10 +51,12 @@ export function buildLocalBusinessJsonLd(data: SiteData) {
     name: data.clinic.clinicName,
     address: {
       "@type": "PostalAddress",
-      streetAddress: data.clinic.address
+      streetAddress: data.clinic.address,
+      addressCountry: "RS"
     },
     telephone: data.clinic.phoneRaw,
     openingHours: data.clinic.openingHours,
+    image: baseUrl ? new URL(data.seo.ogImage, baseUrl).toString() : undefined,
     url: baseUrl,
     sameAs: sameAs.length ? sameAs : undefined
   };
