@@ -142,7 +142,7 @@ No backend values are required.
 - **What**: when configured, an inline Google Calendar "Appointment schedule" booking page — visitors pick a slot and book directly into the clinic's real Google Calendar, without leaving the page. No backend, no third-party account beyond Google. When not configured, falls back to the original validated contact form (client-only, no network request).
 - **Where**: `components/Contact.tsx` (a plain `<iframe>` for booking; `lib/schema.ts` + `react-hook-form` for the fallback form).
 - **How**:
-  - Reads `NEXT_PUBLIC_GOOGLE_CALENDAR_BOOKING_URL` at build time and, if set, renders it as an iframe. It's a static Google-hosted page — no JS SDK, fully compatible with `output: "export"` (GitHub Pages / Cloudflare Pages, see §7b).
+  - Reads `NEXT_PUBLIC_GOOGLE_CALENDAR_BOOKING_URL` at build time and, if set, renders it as an iframe. It's a static Google-hosted page — no JS SDK, fully compatible with `output: "export"` (Cloudflare Pages, see §7b).
   - If the env var is missing, renders the contact form instead, so the site is still fully usable before Google Calendar is configured.
   - Contact form: `react-hook-form` + `zod` via `zodResolver`, inline errors, local success summary (no API request), `Copy message` via Clipboard API, `Send via Email` generates a prefilled `mailto:`.
   - Quick actions column unchanged either way: `tel:` and `https://wa.me/<number>`, plus address/hours.
@@ -260,11 +260,7 @@ CF_PAGES=1 npm run build
 npx wrangler pages deploy out --project-name dental-isailovic --branch main
 ```
 
-**GitHub Pages** (auto-deploys via `.github/workflows/deploy-pages.yml` on push to `main`, live at https://kristijanmit.github.io/dental_isailovic/):
-
-Requires GitHub Pages enabled on the repo (Settings → Pages → Source: GitHub Actions) and the repo to be public (GitHub Pages free tier doesn't support private repos).
-
-Both modes are gated behind `CF_PAGES`/`GITHUB_PAGES` env vars in `next.config.ts`, so local `npm run dev`/`npm run build` are unaffected. Static export disables `next/image` optimization (`unoptimized: true`) since there's no image server on either host.
+This is gated behind the `CF_PAGES` env var in `next.config.ts`, so local `npm run dev`/`npm run build` are unaffected. Static export disables `next/image` optimization (`unoptimized: true`) since there's no image server on this host.
 
 ## 8) Official Sources / Docs
 
