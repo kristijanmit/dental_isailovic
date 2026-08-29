@@ -27,27 +27,29 @@ export function GoogleCalendarBookingMock() {
   const monthLabel = today.toLocaleDateString("en-US", { month: "long", year: "numeric" });
 
   return (
-    <div className="relative flex h-[700px] flex-col bg-white p-6 text-neutral-800">
+    <div className="relative flex min-h-[560px] flex-col bg-white p-4 text-neutral-800 sm:min-h-[700px] sm:p-6">
       <div className="mb-4">
         <p className="text-sm text-neutral-500">30 min appointment</p>
         <h4 className="text-lg font-medium">{monthLabel}</h4>
       </div>
 
-      <div className="grid flex-1 grid-cols-[1fr_180px] gap-6 overflow-hidden">
+      <div className="grid flex-1 gap-6 sm:grid-cols-[1fr_200px]">
         <div>
-          <div className="grid grid-cols-7 gap-1 text-center text-xs text-neutral-500">
+          <div className="grid grid-cols-7 text-center text-xs text-neutral-500">
             {WEEKDAYS.map((day) => (
-              <div key={day}>{day}</div>
+              <div key={day} className="truncate px-0.5">
+                {day}
+              </div>
             ))}
           </div>
-          <div className="mt-1 grid grid-cols-7 gap-1">
+          <div className="mt-1 grid grid-cols-7 gap-y-1">
             {cells.map((day, i) => (
               <button
                 key={i}
                 type="button"
                 disabled={day === null}
                 onClick={() => day && setSelectedDay(day)}
-                className={`aspect-square rounded-full text-sm ${
+                className={`mx-auto flex aspect-square w-full max-w-10 items-center justify-center rounded-full text-sm ${
                   day === null
                     ? ""
                     : day === selectedDay
@@ -61,15 +63,15 @@ export function GoogleCalendarBookingMock() {
           </div>
         </div>
 
-        <div className="overflow-y-auto border-l border-neutral-200 pl-4">
+        <div className="border-neutral-200 pt-4 sm:overflow-y-auto sm:border-l sm:border-t-0 sm:pl-4 sm:pt-0">
           <p className="mb-2 text-sm font-medium">
             {monthLabel.split(" ")[0]} {selectedDay}
           </p>
-          <div className="flex flex-col gap-2">
+          <div className="grid grid-cols-3 gap-2 sm:flex sm:flex-col">
             {MOCK_TIMES.map((time) => (
               <span
                 key={time}
-                className="rounded-md border border-blue-500 px-3 py-1.5 text-center text-sm text-blue-600"
+                className="rounded-md border border-blue-500 px-3 py-2 text-center text-sm text-blue-600"
               >
                 {time}
               </span>
