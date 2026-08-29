@@ -246,6 +246,23 @@ Optional env var:
 
 The project works without this variable; it only enables canonical/absolute metadata URL behavior.
 
+## 7b) Free Staging/Testing Deployments (not prod)
+
+For sharing a preview link without a Vercel deploy, the app also builds as a static export:
+
+**Cloudflare Pages** (manual deploy, live at https://dental-isailovic.pages.dev):
+
+```bash
+CF_PAGES=1 npm run build
+npx wrangler pages deploy out --project-name dental-isailovic --branch main
+```
+
+**GitHub Pages** (auto-deploys via `.github/workflows/deploy-pages.yml` on push to `main`, live at https://kristijanmit.github.io/dental_isailovic/):
+
+Requires GitHub Pages enabled on the repo (Settings → Pages → Source: GitHub Actions) and the repo to be public (GitHub Pages free tier doesn't support private repos).
+
+Both modes are gated behind `CF_PAGES`/`GITHUB_PAGES` env vars in `next.config.ts`, so local `npm run dev`/`npm run build` are unaffected. Static export disables `next/image` optimization (`unoptimized: true`) since there's no image server on either host.
+
 ## 8) Official Sources / Docs
 
 - Next.js App Router docs: https://nextjs.org/docs/app
