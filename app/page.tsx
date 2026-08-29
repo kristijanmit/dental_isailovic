@@ -8,9 +8,6 @@ import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { Footer } from "@/components/Footer";
 import { ScrollFadeSection } from "@/components/ScrollFadeSection";
 
-const ReviewsCarousel = dynamic(() =>
-  import("@/components/ReviewsCarousel").then((m) => ({ default: m.ReviewsCarousel }))
-);
 const Gallery = dynamic(() =>
   import("@/components/Gallery").then((m) => ({ default: m.Gallery }))
 );
@@ -42,9 +39,6 @@ export default function HomePage() {
         </ScrollFadeSection>
         <ScrollFadeSection>
           <WhyChooseUs />
-        </ScrollFadeSection>
-        <ScrollFadeSection>
-          <ReviewsCarousel />
         </ScrollFadeSection>
         <ScrollFadeSection>
           <Gallery />

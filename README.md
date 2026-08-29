@@ -137,22 +137,24 @@ No backend values are required.
 - **Modify**:
   - Replace gallery entries in `siteData.gallery`; replace actual files in `public/images`.
 
-### E) Contact form (client-only)
+### E) Appointment booking (Google Calendar embed, falls back to contact form)
 
-- **What**: validated request form with success state and no network calls.
-- **Where**: `components/Contact.tsx`, `lib/schema.ts`, `lib/utils.ts`.
+- **What**: when configured, an inline Google Calendar "Appointment schedule" booking page — visitors pick a slot and book directly into the clinic's real Google Calendar, without leaving the page. No backend, no third-party account beyond Google. When not configured, falls back to the original validated contact form (client-only, no network request).
+- **Where**: `components/Contact.tsx` (a plain `<iframe>` for booking; `lib/schema.ts` + `react-hook-form` for the fallback form).
 - **How**:
-  - `react-hook-form` + `zod` via `zodResolver`.
-  - Inline errors for all invalid fields.
-  - On submit, render local success summary (no API request).
-  - `Copy message` uses Clipboard API with fallback.
-  - `Send via Email` generates prefilled `mailto:`.
-  - Quick actions: `tel:` and `https://wa.me/<number>`.
-- **A11y**:
-  - Explicit `<label htmlFor>` mapping, visible focus states, textual errors.
+  - Reads `NEXT_PUBLIC_GOOGLE_CALENDAR_BOOKING_URL` at build time and, if set, renders it as an iframe. It's a static Google-hosted page — no JS SDK, fully compatible with `output: "export"` (GitHub Pages / Cloudflare Pages, see §7b).
+  - If the env var is missing, renders the contact form instead, so the site is still fully usable before Google Calendar is configured.
+  - Contact form: `react-hook-form` + `zod` via `zodResolver`, inline errors, local success summary (no API request), `Copy message` via Clipboard API, `Send via Email` generates a prefilled `mailto:`.
+  - Quick actions column unchanged either way: `tel:` and `https://wa.me/<number>`, plus address/hours.
+  - Google Calendar's own UI language follows the visitor's browser language (not configurable from our side) — same caveat applies to any third-party embed.
+- **Setup** (one-time, free on a personal Google account):
+  1. In Google Calendar, click **Create → Appointment schedule**, set duration/availability.
+  2. In **Share your booking page → Website embed**, copy the iframe `src` URL (looks like `https://calendar.google.com/calendar/appointments/schedules/<SCHEDULE_ID>?gv=true`).
+  3. Set `NEXT_PUBLIC_GOOGLE_CALENDAR_BOOKING_URL` to that URL in your deployment env (see §7).
 - **Modify**:
-  - Edit form-related copy in `siteData.contactSection`.
-  - Validation rules in `lib/schema.ts`.
+  - Edit copy in `siteData.contactSection`.
+  - Iframe height/sizing: `components/Contact.tsx`.
+  - Form validation rules: `lib/schema.ts`.
 
 ### F) Performance (Vercel/CDN friendly)
 
@@ -240,11 +242,12 @@ No backend values are required.
 3. Keep default Next.js settings.
 4. Deploy.
 
-Optional env var:
+Optional env vars:
 
-- `NEXT_PUBLIC_SITE_URL=https://your-domain.com`
+- `NEXT_PUBLIC_SITE_URL=https://your-domain.com` — enables canonical/absolute metadata URL behavior.
+- `NEXT_PUBLIC_GOOGLE_CALENDAR_BOOKING_URL=https://calendar.google.com/calendar/appointments/schedules/your-schedule-id?gv=true` — enables the Google Calendar booking widget (see §4E). Without it, the Contact section falls back to the contact form.
 
-The project works without this variable; it only enables canonical/absolute metadata URL behavior.
+The project works without these; each just enables its respective feature.
 
 ## 7b) Free Staging/Testing Deployments (not prod)
 

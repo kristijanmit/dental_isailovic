@@ -27,63 +27,59 @@ const translations: Record<Locale, SiteData> = {
     },
 
     clinic: {
-      clinicName: "Dental Studio Smile",
-      phoneRaw: "+381601234567",
-      phoneDisplay: "+381 60 123 4567",
-      address: "Kralja Petra 12, Belgrade",
-      email: "kontakt@dentalstudio.rs",
+      clinicName: "Dr Isailović Dental Clinic",
+      phoneRaw: "+381656603871",
+      phoneDisplay: "065 660 3871",
+      address: "Pop Lukina 17a, Šabac",
       openingHours: [
-        "Monday – Friday: 08:00 – 20:00",
-        "Saturday: 09:00 – 15:00",
-        "Sunday: Closed"
+        "Tuesday – Friday: 12:00 – 20:00",
+        "Saturday: 13:00 – 21:00",
+        "Monday: Closed",
+        "Weekend on-call (Sat – Sun): 09:00 – 23:00, by phone"
       ],
-      whatsappNumber: "381601234567",
-      googleMapsUrl: "https://www.google.com/maps?q=Kralja+Petra+12,+Beograd&output=embed",
-      socials: {
-        instagram: "https://instagram.com/dentalstudio",
-        facebook: "https://facebook.com/dentalstudio"
-      }
+      whatsappNumber: "381656603871",
+      googleMapsUrl: "https://www.google.com/maps?q=Pop+Lukina+17a,+%C5%A0abac&output=embed",
+      socials: {}
     },
 
     seo: {
-      title: "Dental Studio Smile | Modern pain-free dentistry",
-      titleTemplate: "%s | Dental Studio Smile",
-      description: "Modern dental clinic in Belgrade. Implantology, cosmetic dentistry, teeth whitening, and preventive checkups. Schedule your appointment quickly and easily.",
-      ogImage: "/images/smile.jpg"
+      title: "Dr Isailović | Dental practice in Šabac",
+      titleTemplate: "%s | Dr Isailović Dental Clinic",
+      description: "Dental practice of Dr Nemanja Isailović in Šabac. Personalized dental care with weekend on-call availability. Schedule your appointment quickly and easily.",
+      ogImage: "/images/nemanja.jpg"
     },
 
     nav: [
       { label: "Home", href: "#home" },
       { label: "Services", href: "#services" },
-      { label: "Patient Experiences", href: "#reviews" },
       { label: "Gallery", href: "#gallery" },
-      { label: "Our Team", href: "#team" },
+      { label: "About the Doctor", href: "#team" },
       { label: "Contact", href: "#contact" }
     ],
 
     topBarCtaLabel: "Schedule appointment",
 
     hero: {
-      headline: "A healthy and beautiful smile starts here",
-      subheadline: "A modern dental clinic dedicated to the health and aesthetics of your teeth.",
-      supportingText: "We provide complete dental care – from routine checkups and professional cleaning to aesthetic treatments and implantology. Our goal is a healthy, functional, and natural smile for every patient.",
+      headline: "Your smile, our care.",
+      subheadline: "Dr Nemanja Isailović's dental practice in Šabac, dedicated to the health and aesthetics of your teeth.",
+      supportingText: "We provide complete dental care – from routine checkups and professional cleaning to aesthetic treatments and restorative dentistry. Every patient gets the doctor's personal, direct attention.",
       requestCtaLabel: "Free consultation",
       callCtaLabel: "Call us",
       ctaReassurance: "Free consultation • Appointment this week • No obligation",
       trustBadges: [
-        "4.9/5 patient rating",
-        "Modern dental equipment",
-        "Friendly and professional team"
+        "Weekend on-call availability",
+        "Direct communication with your dentist",
+        "Modern dental equipment"
       ],
 
       image: {
-        src: "/images/smile.jpg",
-        alt: "Dentist talking with a patient in a modern clinic"
+        src: "/images/gallery2.jpg",
+        alt: "Modern dental treatment room"
       }
     },
 
     highlights: {
-      title: "Why patients choose our clinic",
+      title: "Why patients choose this practice",
       items: [
         {
           title: "Modern technology",
@@ -91,8 +87,8 @@ const translations: Record<Locale, SiteData> = {
           icon: "sparkles"
         },
         {
-          title: "Experienced dental team",
-          description: "Our doctors have years of experience and continuously improve their skills in modern dentistry.",
+          title: "A dentist you can trust",
+          description: "Dr Isailović personally handles your case from the first visit through follow-up care.",
           icon: "shield"
         },
         {
@@ -101,8 +97,8 @@ const translations: Record<Locale, SiteData> = {
           icon: "heart"
         },
         {
-          title: "Pleasant atmosphere",
-          description: "We make sure every visit is comfortable and stress-free for our patients.",
+          title: "Weekend on-call service",
+          description: "For urgent cases, we're available Saturday and Sunday, 09:00–23:00, by phone.",
           icon: "clock"
         }
       ]
@@ -121,34 +117,34 @@ const translations: Record<Locale, SiteData> = {
         title: "Preventive dentistry",
         short: "Regular checkups, tartar removal, and dental health monitoring.",
         long: "Preventive checkups and professional teeth cleaning help prevent cavities and gum disease. Regular visits allow early detection of problems and simpler treatment.",
-        image: { src: "/images/care.jpg", alt: "Dental treatment room for checkups" }
+        image: { src: "/images/gallery2.jpg", alt: "Dental treatment room for checkups" }
       },
       {
         id: "cosmetic-dentistry",
         title: "Cosmetic dentistry",
         short: "Teeth whitening, aesthetic fillings, and smile correction.",
         long: "Cosmetic treatments help your smile look natural, healthy, and balanced. We use modern materials and techniques for long-lasting aesthetic results.",
-        image: { src: "/images/smile.jpg", alt: "Modern dental equipment for aesthetic treatments" }
+        image: { src: "/images/gallery3.jpg", alt: "Modern dental equipment for aesthetic treatments" }
       },
       {
         id: "restorative",
         title: "Restorative dentistry",
         short: "Fillings, crowns, bridges, and implants.",
         long: "When teeth are damaged or missing, restorative treatments restore both function and aesthetics with durable and high-quality solutions.",
-        image: { src: "/images/implant.jpg", alt: "Dental chair and equipment for restorative procedures" }
+        image: { src: "/images/gallery6.jpg", alt: "Dental chair and equipment for restorative procedures" }
       },
       {
         id: "emergency",
         title: "Emergency dental care",
         short: "Fast help for pain, swelling, and dental injuries.",
-        long: "In case of pain or urgent dental problems, our team provides quick diagnostics and treatment to resolve the issue as soon as possible.",
-        image: { src: "/images/pain.jpg", alt: "Dental clinic interior for emergency care" }
+        long: "In case of pain or urgent dental problems, we provide quick diagnostics and treatment to resolve the issue as soon as possible – including weekend on-call hours.",
+        image: { src: "/images/gallery8.jpg", alt: "Dental clinic interior for emergency care" }
       }
     ],
 
     whyChooseUs: {
-      title: "Why choose our clinic",
-      subtitle: "We are dedicated to high-quality dental care, long-term oral health, and patient satisfaction.",
+      title: "Why choose this practice",
+      subtitle: "A new practice dedicated to high-quality dental care and personal attention for every patient.",
 
       bullets: [
         "Clearly explained treatment options and transparent pricing",
@@ -158,9 +154,9 @@ const translations: Record<Locale, SiteData> = {
       ],
 
       stats: [
-        { label: "Years of experience", value: "10+" },
-        { label: "Satisfied patients", value: "7000+" },
-        { label: "Average rating", value: "4.9/5" }
+        { label: "Working days", value: "Tue–Sat" },
+        { label: "Weekend on-call", value: "Sat–Sun" },
+        { label: "Patient approach", value: "Personal" }
       ]
     },
 
@@ -169,23 +165,7 @@ const translations: Record<Locale, SiteData> = {
       subtitle: "The trust of our patients is the best confirmation of the quality of our work."
     },
 
-    reviews: [
-      {
-        name: "Milica Petrović",
-        rating: 5,
-        text: "An extremely professional team and a very pleasant atmosphere. Everything was explained in detail and the treatment was painless."
-      },
-      {
-        name: "Marko Jovanović",
-        rating: 5,
-        text: "Very friendly staff and modern equipment. I got an appointment quickly and the result is excellent."
-      },
-      {
-        name: "Jelena Nikolić",
-        rating: 5,
-        text: "The best experience at a dentist so far. The clinic is clean, modern, and the staff are very dedicated to patients."
-      }
-    ],
+    reviews: [],
 
     gallerySection: {
       title: "Clinic gallery",
@@ -193,7 +173,7 @@ const translations: Record<Locale, SiteData> = {
     },
 
     gallery: [
-      { src: "/images/gallery1.jpg", alt: "Dental clinic reception" },
+      { src: "/images/nemanja-office.jpg", alt: "Dr Isailović with a young patient in the clinic" },
       { src: "/images/gallery2.jpg", alt: "Dental treatment room" },
       { src: "/images/gallery3.jpg", alt: "Modern dental equipment" },
       { src: "/images/gallery4.jpg", alt: "Consultation area" },
@@ -204,8 +184,8 @@ const translations: Record<Locale, SiteData> = {
     ],
 
     teamSection: {
-      title: "Our dental team",
-      subtitle: "Skilled and dedicated professionals who care about your smile."
+      title: "Meet Dr Isailović",
+      subtitle: "A dentist who's personally involved in every step of your care."
     },
 
     processSection: {
@@ -234,7 +214,7 @@ const translations: Record<Locale, SiteData> = {
 
     contactSection: {
       title: "Schedule a dental appointment",
-      subtitle: "Fill out the form or contact us by phone and we will respond quickly.",
+      subtitle: "Book a time online, or send us your details and we will respond quickly.",
 
       privacyNote: "Your data is used solely to respond to your inquiry.",
 
@@ -268,9 +248,9 @@ const translations: Record<Locale, SiteData> = {
     },
 
     footer: {
-      aboutTitle: "Dental Studio Smile",
+      aboutTitle: "Dr Isailović Dental Clinic",
 
-      aboutText: "A modern dental clinic dedicated to the health, function, and aesthetics of your teeth.",
+      aboutText: "Dr Nemanja Isailović's dental practice in Šabac, dedicated to the health, function, and aesthetics of your teeth.",
 
       quickLinksTitle: "Quick links",
 
@@ -282,49 +262,24 @@ const translations: Record<Locale, SiteData> = {
         { label: "Website accessibility", href: "#" }
       ],
 
-      copyright: "© 2026 Dental Studio Smile. All rights reserved."
+      copyright: "© 2026 Dr Isailović Dental Clinic. All rights reserved."
     },
 
     team: [
       {
-        name: "Dr Ana Petrović",
-        role: "Dental specialist",
-        bio: "Dr Ana Petrović has more than 12 years of experience in preventive and restorative dentistry. She is especially dedicated to working with patients who have dental anxiety.",
+        name: "Dr Nemanja Isailović",
+        role: "Dentist",
+        bio: "Dr Nemanja Isailović runs his own dental practice in Šabac, providing complete dental care from routine checkups to restorative and cosmetic treatments. He's personally involved in every patient's treatment from the first visit through follow-up care – and available for urgent cases on weekends.",
         specialties: [
-          "Preventive dentistry",
-          "Aesthetic fillings",
-          "Crowns and bridges"
-        ]
-      },
-      {
-        name: "Dr Marko Jovanović",
-        role: "Doctor of dentistry",
-        bio: "Dr Marko Jovanović focuses on cosmetic dentistry and modern smile enhancement techniques. His goal is a natural and functional result for every patient.",
-        specialties: [
-          "Teeth whitening",
+          "General dentistry",
           "Cosmetic dentistry",
-          "Smile design"
-        ]
-      },
-      {
-        name: "Ivana Nikolić",
-        role: "Dental assistant",
-        bio: "Ivana assists during dental procedures and helps organize the clinic workflow, ensuring each treatment runs efficiently and comfortably for patients.",
-        specialties: [
-          "Treatment assistance",
-          "Patient preparation",
-          "Instrument sterilization"
-        ]
-      },
-      {
-        name: "Milan Stanković",
-        role: "Patient coordinator",
-        bio: "Milan is responsible for patient communication, appointment scheduling, and explaining treatment plans so every patient has a clear and smooth experience.",
-        specialties: [
-          "Appointment scheduling",
-          "Treatment information",
-          "Patient support"
-        ]
+          "Restorative dentistry",
+          "Emergency care"
+        ],
+        image: {
+          src: "/images/nemanja.jpg",
+          alt: "Dr Nemanja Isailović in his dental clinic"
+        }
       }
     ]
   },
@@ -345,63 +300,59 @@ const translations: Record<Locale, SiteData> = {
     },
 
     clinic: {
-      clinicName: "Dental Studio Smile",
-      phoneRaw: "+381601234567",
-      phoneDisplay: "+381 60 123 4567",
-      address: "Kralja Petra 12, Beograd",
-      email: "kontakt@dentalstudio.rs",
+      clinicName: "Dr Isailović",
+      phoneRaw: "+381656603871",
+      phoneDisplay: "065 660 3871",
+      address: "Pop Lukina 17a, Šabac",
       openingHours: [
-        "Ponedeljak – Petak: 08:00 – 20:00",
-        "Subota: 09:00 – 15:00",
-        "Nedelja: Ne radimo"
+        "Utorak – Petak: 12:00 – 20:00",
+        "Subota: 13:00 – 21:00",
+        "Ponedeljak: Ne radimo",
+        "Vikend dežurstvo (Subota – Nedelja): 09:00 – 23:00, po pozivu"
       ],
-      whatsappNumber: "381601234567",
-      googleMapsUrl: "https://www.google.com/maps?q=Kralja+Petra+12,+Beograd&output=embed",
-      socials: {
-        instagram: "https://instagram.com/dentalstudio",
-        facebook: "https://facebook.com/dentalstudio"
-      }
+      whatsappNumber: "381656603871",
+      googleMapsUrl: "https://www.google.com/maps?q=Pop+Lukina+17a,+%C5%A0abac&output=embed",
+      socials: {}
     },
 
     seo: {
-      title: "Dental Studio Smile | Savremena stomatologija bez bola",
-      titleTemplate: "%s | Dental Studio Smile",
-      description: "Savremena stomatološka ordinacija u Beogradu. Implantologija, estetska stomatologija, beljenje zuba i preventivni pregledi. Zakažite termin brzo i jednostavno.",
-      ogImage: "/images/smile.jpg"
+      title: "Dr Isailović | Stomatološka ordinacija Šabac",
+      titleTemplate: "%s | Dr Isailović",
+      description: "Stomatološka ordinacija dr Nemanje Isailovića u Šapcu. Lična posvećenost pacijentu i dežurstvo vikendom. Zakažite termin brzo i jednostavno.",
+      ogImage: "/images/nemanja.jpg"
     },
 
     nav: [
       { label: "Početna", href: "#home" },
       { label: "Usluge", href: "#services" },
-      { label: "Iskustva pacijenata", href: "#reviews" },
       { label: "Galerija", href: "#gallery" },
-      { label: "Naš tim", href: "#team" },
+      { label: "O doktoru", href: "#team" },
       { label: "Kontakt", href: "#contact" }
     ],
 
     topBarCtaLabel: "Zakažite pregled",
 
     hero: {
-      headline: "Zdrav i lep osmeh počinje ovde",
-      subheadline: "Savremena stomatološka ordinacija posvećena zdravlju i estetici vaših zuba.",
-      supportingText: "Pružamo kompletnu stomatološku negu – od redovnih pregleda i čišćenja kamenca do estetskih zahvata i implantologije. Naš cilj je zdrav, funkcionalan i prirodan osmeh svakog pacijenta.",
+      headline: "Vaš osmeh, naša briga.",
+      subheadline: "Stomatološka ordinacija dr Nemanje Isailovića u Šapcu, posvećena zdravlju i estetici vaših zuba.",
+      supportingText: "Pružamo kompletnu stomatološku negu – od redovnih pregleda i čišćenja kamenca do estetskih i restaurativnih zahvata. Svakom pacijentu posvećujemo ličnu pažnju doktora.",
       requestCtaLabel: "Besplatna konsultacija",
       callCtaLabel: "Pozovite nas",
       ctaReassurance: "Besplatna konsultacija • Pregled u istoj nedelji • Bez obaveze",
       trustBadges: [
-        "4.9/5 ocena pacijenata",
-        "Savremena stomatološka oprema",
-        "Prijatan i stručan tim"
+        "Dežurstvo vikendom",
+        "Direktna komunikacija sa doktorom",
+        "Savremena stomatološka oprema"
       ],
 
       image: {
-        src: "/images/smile.jpg",
-        alt: "Stomatolog razgovara sa pacijentom u modernoj ordinaciji"
+        src: "/images/gallery2.jpg",
+        alt: "Savremena stomatološka ordinacija"
       }
     },
 
     highlights: {
-      title: "Zašto pacijenti biraju našu ordinaciju",
+      title: "Zašto pacijenti biraju ovu ordinaciju",
       items: [
         {
           title: "Savremena tehnologija",
@@ -409,8 +360,8 @@ const translations: Record<Locale, SiteData> = {
           icon: "sparkles"
         },
         {
-          title: "Iskusan stomatološki tim",
-          description: "Naši doktori imaju dugogodišnje iskustvo i stalno se usavršavaju u oblasti savremene stomatologije.",
+          title: "Doktor kome možete verovati",
+          description: "Dr Isailović lično vodi vaš slučaj od prvog pregleda do kontrole nakon terapije.",
           icon: "shield"
         },
         {
@@ -419,8 +370,8 @@ const translations: Record<Locale, SiteData> = {
           icon: "heart"
         },
         {
-          title: "Prijatna atmosfera",
-          description: "Trudimo se da svaka poseta bude opuštena i bez neprijatnosti za pacijenta.",
+          title: "Dežurstvo vikendom",
+          description: "Za hitne slučajeve dostupni smo subotom i nedeljom od 09:00 do 23:00, po pozivu.",
           icon: "clock"
         }
       ]
@@ -459,14 +410,14 @@ const translations: Record<Locale, SiteData> = {
         id: "emergency",
         title: "Hitna stomatološka pomoć",
         short: "Brza pomoć kod bola, otoka i povreda zuba.",
-        long: "U slučaju bola ili hitnog problema sa zubima, naš tim pruža brzu dijagnostiku i terapiju kako bi se problem rešio što pre.",
+        long: "U slučaju bola ili hitnog problema sa zubima, pružamo brzu dijagnostiku i terapiju kako bi se problem rešio što pre – uključujući dežurstvo vikendom.",
         image: { src: "/images/gallery8.jpg", alt: "Unutrašnjost stomatološke ordinacije za hitnu pomoć" }
       }
     ],
 
     whyChooseUs: {
-      title: "Zašto izabrati našu ordinaciju",
-      subtitle: "Posvećeni smo kvalitetnoj stomatološkoj nezi, dugoročnom zdravlju zuba i zadovoljstvu pacijenata.",
+      title: "Zašto izabrati ovu ordinaciju",
+      subtitle: "Nova ordinacija posvećena kvalitetnoj stomatološkoj nezi i ličnoj pažnji prema svakom pacijentu.",
 
       bullets: [
         "Jasno objašnjene opcije lečenja i transparentne cene",
@@ -476,9 +427,9 @@ const translations: Record<Locale, SiteData> = {
       ],
 
       stats: [
-        { label: "Godina iskustva", value: "10+" },
-        { label: "Zadovoljnih pacijenata", value: "7000+" },
-        { label: "Prosečna ocena", value: "4.9/5" }
+        { label: "Radni dani", value: "Ut–Sub" },
+        { label: "Dežurstvo vikendom", value: "Sub–Ned" },
+        { label: "Pristup pacijentu", value: "Ličan" }
       ]
     },
 
@@ -487,23 +438,7 @@ const translations: Record<Locale, SiteData> = {
       subtitle: "Poverenje pacijenata je najbolja potvrda kvaliteta našeg rada."
     },
 
-    reviews: [
-      {
-        name: "Milica Petrović",
-        rating: 5,
-        text: "Izuzetno profesionalan tim i veoma prijatna atmosfera. Sve je detaljno objašnjeno i tretman je prošao bez bola."
-      },
-      {
-        name: "Marko Jovanović",
-        rating: 5,
-        text: "Vrlo ljubazno osoblje i savremena oprema. Termin sam dobio brzo, a rezultat je odličan."
-      },
-      {
-        name: "Jelena Nikolić",
-        rating: 5,
-        text: "Najbolje iskustvo kod stomatologa do sada. Ordinacija je čista, moderna i osoblje je veoma posvećeno pacijentima."
-      }
-    ],
+    reviews: [],
 
     gallerySection: {
       title: "Galerija ordinacije",
@@ -511,7 +446,7 @@ const translations: Record<Locale, SiteData> = {
     },
 
     gallery: [
-      { src: "/images/gallery1.jpg", alt: "Recepcija stomatološke ordinacije" },
+      { src: "/images/nemanja-office.jpg", alt: "Dr Isailović sa malim pacijentom u ordinaciji" },
       { src: "/images/gallery2.jpg", alt: "Stomatološka ordinacija" },
       { src: "/images/gallery3.jpg", alt: "Savremena stomatološka oprema" },
       { src: "/images/gallery4.jpg", alt: "Prostor za konsultacije" },
@@ -522,8 +457,8 @@ const translations: Record<Locale, SiteData> = {
     ],
 
     teamSection: {
-      title: "Naš stomatološki tim",
-      subtitle: "Stručni i posvećeni profesionalci koji brinu o vašem osmehu."
+      title: "Upoznajte dr Isailovića",
+      subtitle: "Doktor koji je lično uključen u svaki korak vaše nege."
     },
 
     processSection: {
@@ -552,7 +487,7 @@ const translations: Record<Locale, SiteData> = {
 
     contactSection: {
       title: "Zakažite stomatološki pregled",
-      subtitle: "Popunite formular ili nas kontaktirajte telefonom i brzo ćemo vam odgovoriti.",
+      subtitle: "Zakažite termin onlajn, ili nam pošaljite upit i brzo ćemo vam odgovoriti.",
 
       privacyNote: "Vaši podaci se koriste isključivo za odgovor na vaš upit.",
 
@@ -586,9 +521,9 @@ const translations: Record<Locale, SiteData> = {
     },
 
     footer: {
-      aboutTitle: "Dental Studio Smile",
+      aboutTitle: "Dr Isailović",
 
-      aboutText: "Savremena stomatološka ordinacija posvećena zdravlju, funkciji i estetici vaših zuba.",
+      aboutText: "Stomatološka ordinacija dr Nemanje Isailovića u Šapcu, posvećena zdravlju, funkciji i estetici vaših zuba.",
 
       quickLinksTitle: "Brzi linkovi",
 
@@ -600,50 +535,25 @@ const translations: Record<Locale, SiteData> = {
         { label: "Pristupačnost sajta", href: "#" }
       ],
 
-      copyright: "© 2026 Dental Studio Smile. Sva prava zadržana."
+      copyright: "© 2026 Dr Isailović. Sva prava zadržana."
     },
     team: [
       {
-        name: "Dr Ana Petrović",
-        role: "Specijalista stomatologije",
-        bio: "Dr Ana Petrović ima više od 12 godina iskustva u oblasti preventivne i restaurativne stomatologije. Posebno je posvećena radu sa pacijentima koji imaju strah od stomatoloških intervencija.",
+        name: "Dr Nemanja Isailović",
+        role: "Stomatolog",
+        bio: "Dr Nemanja Isailović vodi sopstvenu stomatološku ordinaciju u Šapcu i pruža kompletnu stomatološku negu – od redovnih pregleda do restaurativnih i estetskih zahvata. Lično je uključen u terapiju svakog pacijenta od prvog pregleda do kontrole, a za hitne slučajeve dostupan je i vikendom.",
         specialties: [
-          "Preventivna stomatologija",
-          "Estetske plombe",
-          "Krunice i mostovi"
-        ]
-      },
-      {
-        name: "Dr Marko Jovanović",
-        role: "Doktor stomatologije",
-        bio: "Dr Marko Jovanović bavi se estetskom stomatologijom i savremenim tehnikama poboljšanja osmeha. Njegov cilj je prirodan i funkcionalan rezultat za svakog pacijenta.",
-        specialties: [
-          "Beljenje zuba",
+          "Opšta stomatologija",
           "Estetska stomatologija",
-          "Smile design"
-        ]
-      },
-      {
-        name: "Ivana Nikolić",
-        role: "Stomatološki asistent",
-        bio: "Ivana pomaže u organizaciji rada ordinacije i asistira tokom stomatoloških intervencija, obezbeđujući da svaki tretman protekne efikasno i prijatno za pacijente.",
-        specialties: [
-          "Asistencija u terapiji",
-          "Priprema pacijenata",
-          "Sterilizacija instrumenata"
-        ]
-      },
-      {
-        name: "Milan Stanković",
-        role: "Koordinator pacijenata",
-        bio: "Milan je zadužen za komunikaciju sa pacijentima, zakazivanje termina i informisanje o planu terapije kako bi svaki pacijent imao jasno i jednostavno iskustvo.",
-        specialties: [
-          "Zakazivanje termina",
-          "Informacije o terapiji",
-          "Podrška pacijentima"
-        ]
+          "Restaurativna stomatologija",
+          "Hitna pomoć"
+        ],
+        image: {
+          src: "/images/nemanja.jpg",
+          alt: "Dr Nemanja Isailović u svojoj ordinaciji"
+        }
       }
-    ],
+    ]
   }
 };
 

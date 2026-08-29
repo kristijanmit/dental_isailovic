@@ -37,6 +37,7 @@ export type TeamMember = {
   role: string;
   bio: string;
   specialties: string[];
+  image: { src: string; alt: string };
 };
 
 export type ProcessStep = {
