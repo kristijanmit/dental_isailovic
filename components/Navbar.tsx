@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
@@ -54,8 +55,15 @@ export function Navbar() {
       className="sticky top-10 z-40 border-b bg-background/95 backdrop-blur"
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="#home" className="text-lg font-semibold tracking-tight">
-          {siteData.clinic.clinicName}
+        <Link href="#home" className="flex items-center" aria-label={siteData.clinic.clinicName}>
+          <Image
+            src="/images/horizontal_logo_isailovic.png"
+            alt={siteData.clinic.clinicName}
+            width={878}
+            height={284}
+            priority
+            className="h-12 w-auto sm:h-14"
+          />
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-6 md:flex">

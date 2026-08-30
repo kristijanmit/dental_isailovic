@@ -30,7 +30,7 @@ export function GoogleCalendarBookingMock() {
     <div className="relative flex min-h-[560px] flex-col bg-white p-4 text-neutral-800 sm:min-h-[700px] sm:p-6">
       <div className="mb-4">
         <p className="text-sm text-neutral-500">30 min appointment</p>
-        <h4 className="text-lg font-medium">{monthLabel}</h4>
+        <h3 className="text-lg font-medium">{monthLabel}</h3>
       </div>
 
       <div className="grid flex-1 gap-6 sm:grid-cols-[1fr_200px]">
@@ -43,23 +43,26 @@ export function GoogleCalendarBookingMock() {
             ))}
           </div>
           <div className="mt-1 grid grid-cols-7 gap-y-1">
-            {cells.map((day, i) => (
-              <button
-                key={i}
-                type="button"
-                disabled={day === null}
-                onClick={() => day && setSelectedDay(day)}
-                className={`mx-auto flex aspect-square w-full max-w-10 items-center justify-center rounded-full text-sm ${
-                  day === null
-                    ? ""
-                    : day === selectedDay
+            {cells.map((day, i) =>
+              day === null ? (
+                <div key={i} className="mx-auto aspect-square w-full max-w-10" aria-hidden="true" />
+              ) : (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => setSelectedDay(day)}
+                  aria-label={`${monthLabel.split(" ")[0]} ${day}`}
+                  aria-pressed={day === selectedDay}
+                  className={`mx-auto flex aspect-square w-full max-w-10 items-center justify-center rounded-full text-sm ${
+                    day === selectedDay
                       ? "bg-blue-600 font-semibold text-white"
                       : "text-neutral-700 hover:bg-neutral-100"
-                }`}
-              >
-                {day ?? ""}
-              </button>
-            ))}
+                  }`}
+                >
+                  {day}
+                </button>
+              )
+            )}
           </div>
         </div>
 

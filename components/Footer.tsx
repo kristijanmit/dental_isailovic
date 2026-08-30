@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useSiteData } from "@/contexts/LanguageContext";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -26,7 +27,13 @@ export function Footer() {
     >
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-3 lg:px-8">
         <motion.section variants={variants}>
-          <h2 className="text-lg font-semibold">{siteData.footer.aboutTitle}</h2>
+          <Image
+            src="/images/horizontal_logo_isailovic.png"
+            alt={siteData.footer.aboutTitle}
+            width={878}
+            height={284}
+            className="h-16 w-auto"
+          />
           <p className="mt-3 text-sm text-muted-foreground">{siteData.footer.aboutText}</p>
         </motion.section>
 
